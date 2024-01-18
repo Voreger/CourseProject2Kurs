@@ -21,11 +21,13 @@ function addLowPoints(map){
         var jsonData = document.getElementById("1").getAttribute("data");
         var data = JSON.parse(jsonData);        
         data.forEach(function(item) {
+            var capacity = item.Name.split(",")[1];
+            var number = item.Name.split(",")[0];
             var placemark = new ymaps.Placemark([item.Latitude, item.Longitude], {
-              balloonContentHeader: item.Name,
-              balloonContentBody: "Описание:<br>",
-              balloonContentFooter: item.Address,
-              hintContent: item.Name,
+                balloonContentHeader: number,
+                balloonContentBody: "Мощность: "+ capacity,
+                balloonContentFooter: "<b>Адрес:</b> <br>" + item.Address,
+                hintContent: item.Name,
             },{
                 preset: 'islands#yellowAutoCircleIcon'
             });
@@ -43,11 +45,13 @@ function addMidPoints(map){
         var jsonData = document.getElementById("2").getAttribute("data");
         var data = JSON.parse(jsonData);
         data.forEach(function(item) {
+            var capacity = item.Name.split(",")[1];
+            var number = item.Name.split(",")[0];
             var placemark = new ymaps.Placemark([item.Latitude, item.Longitude], {
-              balloonContentHeader: item.Name,
-              balloonContentBody: "Описание:<br>",
-              balloonContentFooter: item.Address,
-              hintContent: item.Name,
+                balloonContentHeader: number,
+                balloonContentBody: "Мощность: "+ capacity,
+                balloonContentFooter: "<b>Адрес:</b> <br>" + item.Address,
+                hintContent: item.Name,
             },{
                 preset: 'islands#orangeAutoCircleIcon'
             });
@@ -64,11 +68,14 @@ function addMaxPoints(map){
     if(element != null){
         var jsonData = document.getElementById("3").getAttribute("data");
         var data = JSON.parse(jsonData);
+        
         data.forEach(function(item) {
+            var capacity = item.Name.split(",")[1];
+            var number = item.Name.split(",")[0];
             var placemark = new ymaps.Placemark([item.Latitude, item.Longitude], {
-              balloonContentHeader: item.Name,
-              balloonContentBody: "Описание:<br>",
-              balloonContentFooter: item.Address,
+              balloonContentHeader: number,
+              balloonContentBody: "Мощность: "+ capacity,
+              balloonContentFooter: "<b>Адрес:</b> <br>" + item.Address,
               hintContent: item.Name,
             },{
                 preset: 'islands#redAutoCircleIcon'
