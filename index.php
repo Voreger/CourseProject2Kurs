@@ -71,7 +71,6 @@
       <li><a href="index.php">Главная</a></li>
       <li><a href="aboutUs.php">О нас</a></li>
       <li id="show"><i  class="fas fa-bars"></i></li>
-      
       <li><a href="https://vk.com/vgorkov2013" target="_blank"><i class="fab fa-vk"></i></a></li>
   	  <li><a href="https://github.com/Voreger/CourseProject2Kurs" target="_blank"><i class="fab fa-github"></i></a></li>
     </ul>

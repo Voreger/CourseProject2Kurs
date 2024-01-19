@@ -25,11 +25,12 @@ function addLowPoints(map){
             var number = item.Name.split(",")[0];
             var placemark = new ymaps.Placemark([item.Latitude, item.Longitude], {
                 balloonContentHeader: number,
-                balloonContentBody: "Мощность: "+ capacity,
+                balloonContentBody: "<img src=\"img/lowCharger.png\" alt=\"\" class=\"img\"> <br> Мощность: "+ capacity,
                 balloonContentFooter: "<b>Адрес:</b> <br>" + item.Address,
                 hintContent: item.Name,
             },{
-                preset: 'islands#yellowAutoCircleIcon'
+                preset: 'islands#yellowAutoCircleIcon',
+                hideIconOnBalloonOpen: false
             });
             map.geoObjects.add(placemark);
           });
@@ -49,11 +50,12 @@ function addMidPoints(map){
             var number = item.Name.split(",")[0];
             var placemark = new ymaps.Placemark([item.Latitude, item.Longitude], {
                 balloonContentHeader: number,
-                balloonContentBody: "Мощность: "+ capacity,
+                balloonContentBody: "<img src=\"img/midCharger.png\" alt=\"\" class=\"img\"> <br>Мощность: "+ capacity,
                 balloonContentFooter: "<b>Адрес:</b> <br>" + item.Address,
                 hintContent: item.Name,
             },{
-                preset: 'islands#orangeAutoCircleIcon'
+                preset: 'islands#orangeAutoCircleIcon',
+                hideIconOnBalloonOpen: false
             });
             map.geoObjects.add(placemark);
           });
@@ -74,11 +76,12 @@ function addMaxPoints(map){
             var number = item.Name.split(",")[0];
             var placemark = new ymaps.Placemark([item.Latitude, item.Longitude], {
               balloonContentHeader: number,
-              balloonContentBody: "Мощность: "+ capacity,
+              balloonContentBody: "<img src=\"img/fastCharger.png\" alt=\"\" class=\"img\"> <br>Мощность: "+ capacity,
               balloonContentFooter: "<b>Адрес:</b> <br>" + item.Address,
               hintContent: item.Name,
             },{
-                preset: 'islands#redAutoCircleIcon'
+                preset: 'islands#redAutoCircleIcon',
+                hideIconOnBalloonOpen: false
             });
             map.geoObjects.add(placemark);
           });
