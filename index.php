@@ -28,7 +28,7 @@
   <?php
   error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
-  include "settings.php";
+  include "includes/settings.php";
   
   include "includes/db.php";
   

@@ -26,11 +26,18 @@ function addLowPoints(map){
             var placemark = new ymaps.Placemark([item.Latitude, item.Longitude], {
                 balloonContentHeader: number,
                 balloonContentBody: "<img src=\"img/lowCharger.png\" alt=\"\" class=\"img\"> <br> Мощность: "+ capacity,
-                balloonContentFooter: "<b>Адрес:</b> <br>" + item.Address,
+                balloonContentFooter: "<b>Адрес:</b> <br>" + item.Address + "<br><button id=\"update\" class=\"applyBtn btn btn-sm btn-success\" type=\"submit\">Применить</button>",
                 hintContent: item.Name,
             },{
                 preset: 'islands#yellowAutoCircleIcon',
                 hideIconOnBalloonOpen: false
+            });
+            placemark.events.add('mouseenter', function (e) {
+
+                e.get('target').options.set('preset', 'islands#greenAutoCircleIcon');
+            })
+            .add('mouseleave', function (e) {
+                e.get('target').options.set('preset', 'islands#yellowAutoCircleIcon');
             });
             map.geoObjects.add(placemark);
           });
@@ -57,6 +64,13 @@ function addMidPoints(map){
                 preset: 'islands#orangeAutoCircleIcon',
                 hideIconOnBalloonOpen: false
             });
+            placemark.events.add('mouseenter', function (e) {
+
+                e.get('target').options.set('preset', 'islands#greenAutoCircleIcon');
+            })
+            .add('mouseleave', function (e) {
+                e.get('target').options.set('preset', 'islands#orangeAutoCircleIcon');
+            });
             map.geoObjects.add(placemark);
           });
     }
@@ -82,6 +96,13 @@ function addMaxPoints(map){
             },{
                 preset: 'islands#redAutoCircleIcon',
                 hideIconOnBalloonOpen: false
+            });
+            placemark.events.add('mouseenter', function (e) {
+
+                e.get('target').options.set('preset', 'islands#greenAutoCircleIcon');
+            })
+            .add('mouseleave', function (e) {
+                e.get('target').options.set('preset', 'islands#redAutoCircleIcon');
             });
             map.geoObjects.add(placemark);
           });

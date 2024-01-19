@@ -1,6 +1,9 @@
 <?php
-$link = mysqli_connect($db_host, $db_user, $db_password, $db_database);
-$tablename = "data";
+define("DB_HOST",$db_host);
+define("DB_USER",$db_user);
+define("DB_PASSWORD",$db_password);
+define("DB_DATABASE",$db_database);
+$link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE);
 
 /* проверяем соединение */
 if (mysqli_connect_errno()) {
@@ -31,25 +34,29 @@ if(!isset($_GET["22kWt"])&&!isset($_GET["50kWt"])&&!isset($_GET["60kWt"])){
 }
 
 function getAllPoints($link, $tablename) {
-    $result = mysqli_query($link, "SELECT Name, AdmArea, District, Address, Longitude, Latitude  FROM ".$tablename."");
-    $res_assoc = mysqli_fetch_all($result,MYSQLI_ASSOC);
-    return json_encode($res_assoc,JSON_HEX_QUOT | JSON_HEX_TAG);
+  $query = "SELECT Name, AdmArea, District, Address, Longitude, Latitude  FROM ".$tablename."";
+  $result = mysqli_query($link, $query);
+  $res_assoc = mysqli_fetch_all($result,MYSQLI_ASSOC);
+  return json_encode($res_assoc,JSON_HEX_QUOT | JSON_HEX_TAG);
 }
 
 function getLowPoints($link, $tablename) {
-  $result = mysqli_query($link, "SELECT Name, AdmArea, District, Address, Longitude, Latitude  FROM ".$tablename." WHERE name LIKE(\"%22 кВт\")");
+  $query = "SELECT Name, AdmArea, District, Address, Longitude, Latitude  FROM ".$tablename." WHERE name LIKE(\"%22 кВт\")";
+  $result = mysqli_query($link, $query);
   $res_assoc = mysqli_fetch_all($result,MYSQLI_ASSOC);
   return json_encode($res_assoc,JSON_HEX_QUOT | JSON_HEX_TAG);
 }
 
 function getMidPoints($link, $tablename) {
-  $result = mysqli_query($link, "SELECT Name, AdmArea, District, Address, Longitude, Latitude  FROM ".$tablename." WHERE name LIKE(\"%50 кВт\")");
+  $query = "SELECT Name, AdmArea, District, Address, Longitude, Latitude  FROM ".$tablename." WHERE name LIKE(\"%50 кВт\")";
+  $result = mysqli_query($link, $query);
   $res_assoc = mysqli_fetch_all($result,MYSQLI_ASSOC);
   return json_encode($res_assoc,JSON_HEX_QUOT | JSON_HEX_TAG);
 }
 
 function getMaxPoints($link, $tablename) {
-  $result = mysqli_query($link, "SELECT Name, AdmArea, District, Address, Longitude, Latitude  FROM ".$tablename." WHERE name LIKE(\"%60 кВт\")");
+  $query = "SELECT Name, AdmArea, District, Address, Longitude, Latitude  FROM ".$tablename." WHERE name LIKE(\"%60 кВт\")";
+  $result = mysqli_query($link, $query);
   $res_assoc = mysqli_fetch_all($result,MYSQLI_ASSOC);
   return json_encode($res_assoc,JSON_HEX_QUOT | JSON_HEX_TAG);
 }
