@@ -14,8 +14,9 @@
   <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
   <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-  <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=c45b5ce2-6594-421a-8874-98f14765be8e" type="text/javascript"></script>
   <script src="js/map.js" type="text/javascript"></script>
+  <script src="js/route.js" type="text/javascript"></script>
 	<style>
         html, body, #map {
             width: 100%; height: 100%; padding: 0; margin: 0;
