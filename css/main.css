@@ -65,7 +65,7 @@ html {
 }
 
 .mn {
-  width: 360px
+  width: 200px
 }
 
 .mn li {
@@ -125,11 +125,11 @@ html {
 }
 
 footer {
-  position: absolute;
   bottom: 5px;
   z-index: 99999;
-  width: 30%;
-  left: 40%;
+  width: 60%;
+  margin-right:auto;
+  margin-left: auto;
   text-align: center;
   color: #000
 }
@@ -216,4 +216,15 @@ footer a {
   margin-top: 25px;
   margin-right: 5px;
   cursor: pointer;
+}
+.title{
+  text-decoration: none;
+  color: white;
+}
+.title:hover{
+  text-decoration:underline;
+  color: white;
+}
+#show{
+  margin-right: 230px;
 }

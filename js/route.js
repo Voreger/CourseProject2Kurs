@@ -1,6 +1,9 @@
 var myMap;
 
+
+
 function initRoute(userLatitude, userLongitude, Latitude, Longitude) {
+    alert("Маршрут успешно построен.")
     var multiRoute = new ymaps.multiRouter.MultiRoute({
         referencePoints: [
             [userLatitude, userLongitude],
@@ -36,6 +39,7 @@ function initRoute(userLatitude, userLongitude, Latitude, Longitude) {
 
 function goBack() {
     myMap.destroy();
+    alert("Общая карта точек открыта");
     initMap();
 }
 

@@ -5,6 +5,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Курсовой проект Горьков</title>
   <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"
     integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
     crossorigin="anonymous"></script>
@@ -67,11 +68,10 @@
   </div>
 
   <div class="menu">
-    <div>Карта зарядных станций электромобилей</div>
+    <div><a class="title" href="index.php">Карта зарядных станций электромобилей</a></div>
+    <div><a class="title mid" id="show">Фильтры</a></div>
     <ul class="mn">
-      <li><a href="index.php">Главная</a></li>
       <li><a href="aboutUs.php">О нас</a></li>
-      <li id="show"><i  class="fas fa-bars"></i></li>
       <li><a href="https://vk.com/vgorkov2013" target="_blank"><i class="fab fa-vk"></i></a></li>
   	  <li><a href="https://github.com/Voreger/CourseProject2Kurs" target="_blank"><i class="fab fa-github"></i></a></li>
     </ul>
@@ -93,7 +93,3 @@
 </body>
 
 </html>
-
-<?php
-mysqli_close($link);
-?>

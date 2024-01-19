@@ -103,10 +103,9 @@
     font-size: 0.875em;
   }
   #about{
-    height: 85%;
-    background-color: rgba(0, 0, 0, 0.418);
-    background-image: url(../img/charger.png);
-    background-size: 100% auto;
+    background:url('../img/charger.png') no-repeat center center;
+    min-height:85%;
+    background-size:cover;
     color: white;
     text-align: center;
     
@@ -114,7 +113,15 @@
 
 .row{
     color: white;
+    margin-left:0px;
+    margin-right: 0px;
 }
 .lead{
     background-color: rgba(0, 0, 0, 0.418);
+}
+p{
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size:x-large !important;
 }
